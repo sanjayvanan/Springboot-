@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+<style>
+body {
+  background-image: url("book.jpg");
+  background-size: 1640px 480px;
+  width:1200px;
+  height:400px;
+}
+h1{
+background-color:black;
+color:white;}
+a:hover{
+background-color:red;
+color:black;
+text-decoration:none;
+}
+</style>
+</head>
+<body>
+<form><div class="container-fluid text-center m-5">
+<h1>STUDENT DETAILS</h1><br/>
+<a class="h2" th:href="@{/view_product}">Student Details</a>
+</div></form>
+</body>
+</html>

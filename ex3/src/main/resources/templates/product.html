@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Manage Products</title>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+<style>
+body {
+  background-image: url("back.jpg");
+  background-size: 1640px 550px;
+  width:1200px;
+  height:400px;
+  color:white;
+}
+h2{
+background-color:black;
+color:white;}
+table,td{
+color:black;
+font-weight:bolder;}
+</style>
+</head>
+<body>
+<form><div class="container-fluid text-center">
+<div><h2>Student Details</h2></div>
+<div class="m-2">
+<a class="h3" th:href="@{/prod/new}" style="color:red">Add New Student</a>
+</div>
+
+<div th:if="${message}" class="alert alert-success text-center">
+[[${message}]]
+</div>
+
+<div>
+<table class="table table-bordered">
+<thead class="thead-dark">
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Roll No</th>
+<th>Branch</th>
+<th>CGPA</th>
+</tr>
+</thead>
+<tbody th:each="prod:${listprod}">
+<tr>
+<td>[[${prod.id}]]</td>
+<td>[[${prod.name}]]</td>
+<td>[[${prod.rollno}]]</td>
+<td>[[${prod.branch}]]</td>
+<td>[[${prod.cgpa}]]</td>
+<td><a class="h4" th:href="@{'/prod/edit/' + ${prod.id}}">Edit</a>
+</td><td><a class="h4" th:href="@{'/prod/delete/' + ${prod.id}}">Delete</a></td>
+</tr>
+</tbody>
+</table>
+</div>
